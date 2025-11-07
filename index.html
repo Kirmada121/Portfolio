@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siddharth's Portfolio</title>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Reset & basic styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; background: #f0f4f8; color: #333; scroll-behavior: smooth; }
+        a { text-decoration: none; color: inherit; }
+
+        header {
+            background: linear-gradient(135deg, #007bff, #00d4ff);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 { font-size: 3rem; margin-bottom: 10px; animation: fadeInDown 1s ease forwards; }
+        header p { font-size: 1.2rem; animation: fadeInUp 1s ease forwards; }
+
+        @keyframes fadeInDown { from {opacity:0; transform:translateY(-30px);} to {opacity:1; transform:translateY(0);} }
+        @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+
+        nav {
+            background: #0056b3;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul { display: flex; justify-content: center; list-style: none; }
+        nav ul li { margin: 0 15px; }
+        nav ul li a {
+            color: white;
+            padding: 15px 10px;
+            display: block;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { background: #004494; border-radius: 5px; }
+
+        section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        section.visible { opacity: 1; transform: translateY(0); }
+
+        h2 { text-align: center; color: #007bff; margin-bottom: 30px; }
+
+        /* Skills */
+        .skills { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        .skill-card {
+            background: #007bff;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            width: 150px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skill-card i { font-size: 2rem; margin-bottom: 10px; }
+        .skill-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+        /* Projects */
+        .projects { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .project-card {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 12px;
+            width: 250px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+        /* Education */
+        .education ul { list-style: none; }
+        .education ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .education ul li::before {
+            content: "\f19d"; /* Font Awesome graduation cap */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #007bff;
+        }
+
+        /* Contact */
+        .contact p { text-align: center; margin-bottom: 15px; font-size: 1.1rem; }
+        .contact a { color: #007bff; font-weight: bold; }
+
+        /* Footer */
+        footer { background: #007bff; color: white; text-align: center; padding: 20px; }
+
+        /* Responsive */
+        @media(max-width:768px){
+            .skills, .projects { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Siddharth Dhyani</h1>
+    <p>Welcome to my interactive portfolio</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="home">
+    <h2>Home</h2>
+    <p>Hello! I am Siddharth Dhyani, a passionate Computer Science student. This portfolio showcases my skills, projects, and education. Scroll down to explore!</p>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>I am currently pursuing BTech in Computer Science and Engineering from Graphic Era Hill University. I enjoy creating web apps, solving problems with code, and building projects that make a difference.</p>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills">
+        <div class="skill-card"><i class="fab fa-html5"></i><p>HTML</p></div>
+        <div class="skill-card"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+        <div class="skill-card"><i class="fab fa-js-square"></i><p>JavaScript</p></div>
+        <div class="skill-card"><i class="fas fa-code"></i><p>C & C++</p></div>
+        <div class="skill-card"><i class="fab fa-python"></i><p>Python</p></div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+        <div class="project-card">
+            <h3>Dormitory Management System</h3>
+            <p>Created using C, includes admin and student functionalities.</p>
+        </div>
+        <div class="project-card">
+            <h3>Dynamic Timetable Generator</h3>
+            <p>A web app to generate timetables based on class and subject inputs.</p>
+        </div>
+        <div class="project-card">
+            <h3>Personal Portfolio Website</h3>
+            <p>Interactive portfolio website built with HTML, CSS, and JS.</p>
+        </div>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <ul>
+        <li>BTech in Computer Science & Engineering - Graphic Era Hill University</li>
+        <li>Schooling: SGRR</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact">
+        <p>📞 Phone: <a href="tel:9058421457">9058421457</a></p>
+        <p>✉️ Email: <a href="mailto:siddharthdhyani776@gmail.com">siddharthdhyani776@gmail.com</a></p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Siddharth Dhyani. All rights reserved.</p>
+</footer>
+
+<script>
+    // Scroll animation
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => { observer.observe(section); });
+</script>
+
+</body>
+</html>
